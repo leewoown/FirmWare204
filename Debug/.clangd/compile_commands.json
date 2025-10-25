@@ -1,0 +1,137 @@
+[
+   {
+      "directory" : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/Debug",
+      "command"   : "clang++ -I\"D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS\" -I\"C:/ti/ccs2001/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include\" -I\"D:/24_UnitBMS_24ChVER04/F28069PackBMS/SysInclude\" -I\"D:/24_UnitBMS_24ChVER04/00 C2806X/include\"",
+      "file"      : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/C2806XSrc/F2806x_Adc.c"
+   },
+   {
+      "directory" : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/Debug",
+      "command"   : "clang++ -I\"D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS\" -I\"C:/ti/ccs2001/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include\" -I\"D:/24_UnitBMS_24ChVER04/F28069PackBMS/SysInclude\" -I\"D:/24_UnitBMS_24ChVER04/00 C2806X/include\"",
+      "file"      : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/C2806XSrc/F2806x_CSMPasswords.asm"
+   },
+   {
+      "directory" : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/Debug",
+      "command"   : "clang++ -I\"D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS\" -I\"C:/ti/ccs2001/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include\" -I\"D:/24_UnitBMS_24ChVER04/F28069PackBMS/SysInclude\" -I\"D:/24_UnitBMS_24ChVER04/00 C2806X/include\"",
+      "file"      : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/C2806XSrc/F2806x_CodeStartBranch.asm"
+   },
+   {
+      "directory" : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/Debug",
+      "command"   : "clang++ -I\"D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS\" -I\"C:/ti/ccs2001/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include\" -I\"D:/24_UnitBMS_24ChVER04/F28069PackBMS/SysInclude\" -I\"D:/24_UnitBMS_24ChVER04/00 C2806X/include\"",
+      "file"      : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/C2806XSrc/F2806x_CpuTimers.c"
+   },
+   {
+      "directory" : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/Debug",
+      "command"   : "clang++ -I\"D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS\" -I\"C:/ti/ccs2001/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include\" -I\"D:/24_UnitBMS_24ChVER04/F28069PackBMS/SysInclude\" -I\"D:/24_UnitBMS_24ChVER04/00 C2806X/include\"",
+      "file"      : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/C2806XSrc/F2806x_DBGIER.asm"
+   },
+   {
+      "directory" : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/Debug",
+      "command"   : "clang++ -I\"D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS\" -I\"C:/ti/ccs2001/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include\" -I\"D:/24_UnitBMS_24ChVER04/F28069PackBMS/SysInclude\" -I\"D:/24_UnitBMS_24ChVER04/00 C2806X/include\"",
+      "file"      : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/C2806XSrc/F2806x_DefaultIsr.c"
+   },
+   {
+      "directory" : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/Debug",
+      "command"   : "clang++ -I\"D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS\" -I\"C:/ti/ccs2001/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include\" -I\"D:/24_UnitBMS_24ChVER04/F28069PackBMS/SysInclude\" -I\"D:/24_UnitBMS_24ChVER04/00 C2806X/include\"",
+      "file"      : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/C2806XSrc/F2806x_Dma.c"
+   },
+   {
+      "directory" : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/Debug",
+      "command"   : "clang++ -I\"D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS\" -I\"C:/ti/ccs2001/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include\" -I\"D:/24_UnitBMS_24ChVER04/F28069PackBMS/SysInclude\" -I\"D:/24_UnitBMS_24ChVER04/00 C2806X/include\"",
+      "file"      : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/C2806XSrc/F2806x_ECan.c"
+   },
+   {
+      "directory" : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/Debug",
+      "command"   : "clang++ -I\"D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS\" -I\"C:/ti/ccs2001/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include\" -I\"D:/24_UnitBMS_24ChVER04/F28069PackBMS/SysInclude\" -I\"D:/24_UnitBMS_24ChVER04/00 C2806X/include\"",
+      "file"      : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/C2806XSrc/F2806x_EPwm.c"
+   },
+   {
+      "directory" : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/Debug",
+      "command"   : "clang++ -I\"D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS\" -I\"C:/ti/ccs2001/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include\" -I\"D:/24_UnitBMS_24ChVER04/F28069PackBMS/SysInclude\" -I\"D:/24_UnitBMS_24ChVER04/00 C2806X/include\"",
+      "file"      : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/C2806XSrc/F2806x_EQep.c"
+   },
+   {
+      "directory" : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/Debug",
+      "command"   : "clang++ -I\"D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS\" -I\"C:/ti/ccs2001/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include\" -I\"D:/24_UnitBMS_24ChVER04/F28069PackBMS/SysInclude\" -I\"D:/24_UnitBMS_24ChVER04/00 C2806X/include\"",
+      "file"      : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/C2806XSrc/F2806x_GlobalVariableDefs.c"
+   },
+   {
+      "directory" : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/Debug",
+      "command"   : "clang++ -I\"D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS\" -I\"C:/ti/ccs2001/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include\" -I\"D:/24_UnitBMS_24ChVER04/F28069PackBMS/SysInclude\" -I\"D:/24_UnitBMS_24ChVER04/00 C2806X/include\"",
+      "file"      : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/C2806XSrc/F2806x_Gpio.c"
+   },
+   {
+      "directory" : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/Debug",
+      "command"   : "clang++ -I\"D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS\" -I\"C:/ti/ccs2001/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include\" -I\"D:/24_UnitBMS_24ChVER04/F28069PackBMS/SysInclude\" -I\"D:/24_UnitBMS_24ChVER04/00 C2806X/include\"",
+      "file"      : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/C2806XSrc/F2806x_I2C.c"
+   },
+   {
+      "directory" : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/Debug",
+      "command"   : "clang++ -I\"D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS\" -I\"C:/ti/ccs2001/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include\" -I\"D:/24_UnitBMS_24ChVER04/F28069PackBMS/SysInclude\" -I\"D:/24_UnitBMS_24ChVER04/00 C2806X/include\"",
+      "file"      : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/C2806XSrc/F2806x_Mcbsp.c"
+   },
+   {
+      "directory" : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/Debug",
+      "command"   : "clang++ -I\"D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS\" -I\"C:/ti/ccs2001/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include\" -I\"D:/24_UnitBMS_24ChVER04/F28069PackBMS/SysInclude\" -I\"D:/24_UnitBMS_24ChVER04/00 C2806X/include\"",
+      "file"      : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/C2806XSrc/F2806x_MemCopy.c"
+   },
+   {
+      "directory" : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/Debug",
+      "command"   : "clang++ -I\"D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS\" -I\"C:/ti/ccs2001/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include\" -I\"D:/24_UnitBMS_24ChVER04/F28069PackBMS/SysInclude\" -I\"D:/24_UnitBMS_24ChVER04/00 C2806X/include\"",
+      "file"      : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/C2806XSrc/F2806x_OscComp.c"
+   },
+   {
+      "directory" : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/Debug",
+      "command"   : "clang++ -I\"D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS\" -I\"C:/ti/ccs2001/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include\" -I\"D:/24_UnitBMS_24ChVER04/F28069PackBMS/SysInclude\" -I\"D:/24_UnitBMS_24ChVER04/00 C2806X/include\"",
+      "file"      : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/C2806XSrc/F2806x_PieCtrl.c"
+   },
+   {
+      "directory" : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/Debug",
+      "command"   : "clang++ -I\"D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS\" -I\"C:/ti/ccs2001/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include\" -I\"D:/24_UnitBMS_24ChVER04/F28069PackBMS/SysInclude\" -I\"D:/24_UnitBMS_24ChVER04/00 C2806X/include\"",
+      "file"      : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/C2806XSrc/F2806x_PieVect.c"
+   },
+   {
+      "directory" : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/Debug",
+      "command"   : "clang++ -I\"D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS\" -I\"C:/ti/ccs2001/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include\" -I\"D:/24_UnitBMS_24ChVER04/F28069PackBMS/SysInclude\" -I\"D:/24_UnitBMS_24ChVER04/00 C2806X/include\"",
+      "file"      : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/C2806XSrc/F2806x_Sci.c"
+   },
+   {
+      "directory" : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/Debug",
+      "command"   : "clang++ -I\"D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS\" -I\"C:/ti/ccs2001/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include\" -I\"D:/24_UnitBMS_24ChVER04/F28069PackBMS/SysInclude\" -I\"D:/24_UnitBMS_24ChVER04/00 C2806X/include\"",
+      "file"      : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/C2806XSrc/F2806x_Spi.c"
+   },
+   {
+      "directory" : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/Debug",
+      "command"   : "clang++ -I\"D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS\" -I\"C:/ti/ccs2001/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include\" -I\"D:/24_UnitBMS_24ChVER04/F28069PackBMS/SysInclude\" -I\"D:/24_UnitBMS_24ChVER04/00 C2806X/include\"",
+      "file"      : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/C2806XSrc/F2806x_SysCtrl.c"
+   },
+   {
+      "directory" : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/Debug",
+      "command"   : "clang++ -I\"D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS\" -I\"C:/ti/ccs2001/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include\" -I\"D:/24_UnitBMS_24ChVER04/F28069PackBMS/SysInclude\" -I\"D:/24_UnitBMS_24ChVER04/00 C2806X/include\"",
+      "file"      : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/C2806XSrc/F2806x_usDelay.asm"
+   },
+   {
+      "directory" : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/Debug",
+      "command"   : "clang++ -I\"D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS\" -I\"C:/ti/ccs2001/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include\" -I\"D:/24_UnitBMS_24ChVER04/F28069PackBMS/SysInclude\" -I\"D:/24_UnitBMS_24ChVER04/00 C2806X/include\"",
+      "file"      : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/SysSoure/BATAlgorithm.c"
+   },
+   {
+      "directory" : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/Debug",
+      "command"   : "clang++ -I\"D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS\" -I\"C:/ti/ccs2001/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include\" -I\"D:/24_UnitBMS_24ChVER04/F28069PackBMS/SysInclude\" -I\"D:/24_UnitBMS_24ChVER04/00 C2806X/include\"",
+      "file"      : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/SysSoure/BATCalc.c"
+   },
+   {
+      "directory" : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/Debug",
+      "command"   : "clang++ -I\"D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS\" -I\"C:/ti/ccs2001/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include\" -I\"D:/24_UnitBMS_24ChVER04/F28069PackBMS/SysInclude\" -I\"D:/24_UnitBMS_24ChVER04/00 C2806X/include\"",
+      "file"      : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/SysSoure/DSP28x_Project.c"
+   },
+   {
+      "directory" : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/Debug",
+      "command"   : "clang++ -I\"D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS\" -I\"C:/ti/ccs2001/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include\" -I\"D:/24_UnitBMS_24ChVER04/F28069PackBMS/SysInclude\" -I\"D:/24_UnitBMS_24ChVER04/00 C2806X/include\"",
+      "file"      : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/SysSoure/ProtectRelay.c"
+   },
+   {
+      "directory" : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/Debug",
+      "command"   : "clang++ -I\"D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS\" -I\"C:/ti/ccs2001/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include\" -I\"D:/24_UnitBMS_24ChVER04/F28069PackBMS/SysInclude\" -I\"D:/24_UnitBMS_24ChVER04/00 C2806X/include\"",
+      "file"      : "D:/45 168S1P_Unit_PackBMSR03/F28069PackBMS/SysSoure/main.c"
+   }
+]

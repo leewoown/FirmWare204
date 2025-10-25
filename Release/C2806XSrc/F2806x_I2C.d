@@ -1,0 +1,6 @@
+# FIXED
+
+C2806XSrc/F2806x_I2C.obj: ../C2806XSrc/F2806x_I2C.c
+
+../C2806XSrc/F2806x_I2C.c:
+
