@@ -393,7 +393,9 @@ void ModuleInit(ModulemReg *P)
     memset(&P->MailBox4Rxcount[0],0,7);
     memset(&P->MailBox5Rxcount[0],0,7);
     memset(&P->MailBox6Rxcount[0],0,7);
-
+    memset(&P->MailBox7Rxcount[0],0,7);
+    memset(&P->MailBox8Rxcount[0],0,7);
+    memset(&P->MailBox9Rxcount[0],0,7);
   //  P->MDCTComErrStaute.all=0;
   //  P->MDSubComErrStaute.all=0;
   //  P->MDBatICCOMErrStaute.all=0;

@@ -1059,8 +1059,8 @@ void InitECana(void)
            ECanaShadow.CANMD.bit.MD4=1;   //RX:Module 5
            ECanaShadow.CANMD.bit.MD5=1;   //RX:Module 6
            ECanaShadow.CANMD.bit.MD6=1;   //RX:Module 7
-           ECanaShadow.CANMD.bit.MD7=1;
-           ECanaShadow.CANMD.bit.MD8=1;
+           ECanaShadow.CANMD.bit.MD7=1;   //RX:Module 8
+           ECanaShadow.CANMD.bit.MD8=1;   //RX:Module 9
            ECanaShadow.CANMD.bit.MD9=0;
            ECanaShadow.CANMD.bit.MD10=0;
            ECanaShadow.CANMD.bit.MD11=0;
