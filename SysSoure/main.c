@@ -1322,6 +1322,8 @@ interrupt void cpu_timer0_isr(void)
                SysRegs.PackModule5Regs.all = ModRegs.MDstatusbit[4];
                SysRegs.PackModule6Regs.all = ModRegs.MDstatusbit[5];
                SysRegs.PackModule7Regs.all = ModRegs.MDstatusbit[6];
+               SysRegs.PackModule8Regs.all = ModRegs.MDstatusbit[7];
+               SysRegs.PackModule9Regs.all = ModRegs.MDstatusbit[7];
        break;
        case 60:
 

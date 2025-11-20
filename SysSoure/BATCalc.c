@@ -74,11 +74,12 @@ void BatCalcRegsInit(BatCalcReg *P)
 void BatCalcVoltHandle(BatCalcReg *P)
 {
     Uint16  Count;
-
+    Uint16  const MoudleEa =8;
+    Uint16  const PackCellEa =22*9;
     /*
      * 정수를 소수점 변환하는 루틴
      */
-    for(Count=0; Count<ModuleEA; Count++)
+    for(Count=0; Count<MoudleEa; Count++)
     {
 
         P->MDCellMaxVoltF[Count] =(float32) P->MDCellMaxVolt[Count]  *0.001f;
@@ -88,7 +89,7 @@ void BatCalcVoltHandle(BatCalcReg *P)
         P->MDTotalVoltF[Count]   =(float32) P->MDTotalVolt[Count]    *0.01f;
     }
     float32 PackVoltageBufF=0;
-    for(Count=0; Count<ModuleEA; Count++)
+    for(Count=0; Count<MoudleEa; Count++)
     {
         PackVoltageBufF = PackVoltageBufF+P->MDTotalVoltF[Count];
     }
@@ -100,7 +101,7 @@ void BatCalcVoltHandle(BatCalcReg *P)
     Uint16 MDCellMaxVoltPos =0;
     Uint16 MDCellMinVoltPos =0;
 
-    for(Count=0; Count<ModuleEA; Count++)
+    for(Count=0; Count<MoudleEa; Count++)
     {
         const float32 Vmax = P->MDCellMaxVoltF[Count];
         const float32 Vmin = P->MDCellMinVoltF[Count];
@@ -119,7 +120,7 @@ void BatCalcVoltHandle(BatCalcReg *P)
     P->PackPTCANF        = PackVoltageBufF;
     P->PackCellMaxVoltF  = CellMaxVoltF;
     P->PackCellMinVoltF  = CellMinVoltF;
-    P->PackCellAgvVoltF  = P->PackPTCANF/(float32)PackCellEA;
+    P->PackCellAgvVoltF  = P->PackPTCANF/(float32)PackCellEa;
     P->PackCellDivVoltF  = CellMaxVoltF-CellMinVoltF;
     P->PackCellMaxVoltPos =  (MDCellMaxVoltPos*24)+P->MDMaxVoltPo[MDCellMinVoltPos-1];
     P->PackCellMinVoltPos =  (MDCellMinVoltPos*24)+P->MDMinVoltPo[MDCellMinVoltPos-1];

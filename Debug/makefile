@@ -40,8 +40,8 @@ ORDERED_OBJS += \
 "./SysSoure/main.obj" \
 $(GEN_CMDS__FLAG) \
 -l"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/lib/rts2800_fpu32.lib" \
--l"D:/204 168S1P_Unit_PackBMSR00_HD/00 C2806X/cmd/F28069.cmd" \
--l"D:/204 168S1P_Unit_PackBMSR00_HD/00 C2806X/cmd/F2806x_Headers_nonBIOS.cmd" \
+-l"D:/204 198S1P_Unit_PackBMSR00_HD/00 C2806X/cmd/F28069.cmd" \
+-l"D:/204 198S1P_Unit_PackBMSR00_HD/00 C2806X/cmd/F2806x_Headers_nonBIOS.cmd" \
 -llibc.a \
 
 -include ../makefile.init
@@ -167,7 +167,7 @@ all: $(OBJS) $(GEN_CMDS)
 HD198S1Pack_UBMS.out: $(OBJS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: C2000 Linker'
-	"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/bin/cl2000" -v28 -ml -mt --cla_support=cla0 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu0 -Ooff --opt_for_speed=2 --fp_mode=strict --fp_reassoc=on --advice:performance=all -g --diag_warning=225 --diag_wrap=off --display_error_number --abi=coffabi -z -m"HD198S1Pack_UBMS.map" --heap_size=0 --stack_size=0x0050 --warn_sections -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/CMD" -i"D:/204 168S1P_Unit_PackBMSR00_HD/00 C2806X/cmd" --reread_libs --diag_wrap=off --display_error_number --xml_link_info="HD198S1Pack_UBMS_linkInfo.xml" -o "HD198S1Pack_UBMS.out" $(ORDERED_OBJS)
+	"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/bin/cl2000" -v28 -ml -mt --cla_support=cla0 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu0 -Ooff --opt_for_speed=2 --fp_mode=strict --fp_reassoc=on --advice:performance=all -g --diag_warning=225 --diag_wrap=off --display_error_number --abi=coffabi -z -m"HD198S1Pack_UBMS.map" --heap_size=0 --stack_size=0x0050 --warn_sections -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/lib" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include" -i"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/CMD" -i"D:/204 198S1P_Unit_PackBMSR00_HD/00 C2806X/cmd" --reread_libs --diag_wrap=off --display_error_number --xml_link_info="HD198S1Pack_UBMS_linkInfo.xml" -o "HD198S1Pack_UBMS.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 

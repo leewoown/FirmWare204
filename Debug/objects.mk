@@ -4,5 +4,5 @@
 
 USER_OBJS :=
 
-LIBS := -l"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/lib/rts2800_fpu32.lib" -l"D:/204\ 168S1P_Unit_PackBMSR00_HD/00\ C2806X/cmd/F28069.cmd" -l"D:/204\ 168S1P_Unit_PackBMSR00_HD/00\ C2806X/cmd/F2806x_Headers_nonBIOS.cmd" -llibc.a
+LIBS := -l"C:/ti/ccs1271/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/lib/rts2800_fpu32.lib" -l"D:/204\ 198S1P_Unit_PackBMSR00_HD/00\ C2806X/cmd/F28069.cmd" -l"D:/204\ 198S1P_Unit_PackBMSR00_HD/00\ C2806X/cmd/F2806x_Headers_nonBIOS.cmd" -llibc.a
 
