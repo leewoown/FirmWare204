@@ -772,8 +772,13 @@ void InitECana(void)
            ECanaMboxes.MBOX26.MSGID.bit.STDMSGID = 0x01B;
            ECanaMboxes.MBOX27.MSGID.bit.STDMSGID = 0x700;
            ECanaMboxes.MBOX28.MSGID.bit.STDMSGID = 0x701;
-           ECanaMboxes.MBOX29.MSGID.bit.STDMSGID = 0x512;
-           ECanaMboxes.MBOX30.MSGID.bit.STDMSGID = 0x702;
+           ECanaMboxes.MBOX29.MSGID.bit.STDMSGID = 0x3C2;
+           ECanaMboxes.MBOX30.MSGID.bit.STDMSGID = 0x700;
+           ECanaMboxes.MBOX30.MSGID.bit.STDMSGID   = (Uint16)((0x700 >> 18) & 0x7FFUL);// = 0x0
+           ECanaMboxes.MBOX30.MSGID.bit.EXTMSGID_H = (Uint16)((0x700 >> 16) & 0x3UL);  // = 0x0
+           ECanaMboxes.MBOX30.MSGID.bit.EXTMSGID_L = (Uint16)( 0x700         & 0xFFFFu);// = 0x0700
+
+
            ECanaMboxes.MBOX31.MSGID.bit.STDMSGID = 0X300;
            #endif
            #if (PackNum==2)
@@ -926,12 +931,14 @@ void InitECana(void)
            ECanaMboxes.MBOX27.MSGID.bit.AME = 0;
            ECanaMboxes.MBOX28.MSGID.bit.AME = 0;
            ECanaMboxes.MBOX29.MSGID.bit.AME = 0;
+
            ECanaMboxes.MBOX30.MSGID.bit.AME = 0;
+           ECanaMboxes.MBOX30.MSGID.bit.AAM = 0;
 
            ECanaMboxes.MBOX27.MSGID.bit.IDE = 0;
            ECanaMboxes.MBOX28.MSGID.bit.IDE = 0;
            ECanaMboxes.MBOX29.MSGID.bit.IDE = 0;
-           ECanaMboxes.MBOX30.MSGID.bit.IDE = 0;
+           ECanaMboxes.MBOX30.MSGID.bit.IDE = 1;
 
 
 
@@ -1240,7 +1247,7 @@ void InitECana(void)
            ECanaMboxes.MBOX27.MSGID.bit.IDE = 0;
            ECanaMboxes.MBOX28.MSGID.bit.IDE = 0;
            ECanaMboxes.MBOX29.MSGID.bit.IDE = 0;
-           ECanaMboxes.MBOX30.MSGID.bit.IDE = 0;
+           ECanaMboxes.MBOX30.MSGID.bit.IDE = 1;
 
            ECanaMboxes.MBOX31.MSGID.bit.IDE = 0;
 

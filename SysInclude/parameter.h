@@ -194,9 +194,9 @@ Note: In this software, the default inverter is supposed to be DMC1500 board.
 #define PLLONG(X)               *(volatile unsigned long long *)(X)
 
 #define SysRegTimer5msec     5
-#define SysRegTimer10msec    10
-#define SysRegTimer50msec    50
-#define SysRegTimer100msec   100
+#define SysRegTimer10msec    9
+#define SysRegTimer50msec    49
+#define SysRegTimer100msec   98
 #define SysRegTimer300msec   300
 #define SysRegTimer500msec   500
 #define SysRegTimer1000msec  1000
@@ -262,11 +262,11 @@ Parameter
 
 
 
-#define     Product_SysCellVauleS              168
+#define     Product_SysCellVauleS              198
 #define     Product_SysCellVauleP              1
-#define     Product_Voltage                    618.2 // 3.664*24
+#define     Product_Voltage                    728.6 // 3.664*24
 #define     Product_Capacity                   100.0  //
-#define     Product_Type                       2   // 24.09.21
+#define     Product_Type                       3   // 24.09.21
 #define     Product_Version                    1   // 24.09.21
 
 #define     PackSysVoltMax                     6972 //4.2*24

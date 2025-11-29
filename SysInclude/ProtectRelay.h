@@ -59,16 +59,13 @@ typedef enum
 {
   STATERly_INIT,
   STATERly_STANDBY,
-  STATERly_OnSeqReady,
-  STATERly_OnSeqNRlyOn,
-  STATERly_OnSeqPreRlyOn,
-  STATERly_OnSeqPRlyOn,
-  STATERly_OnSeqPreRlyOff,
-  STATERly_OffSeqReady,
-  STATERly_OffSeqPRlyOff,
-  STATERly_OffSeqNRlyOff,
-  STATERly_ProtectRlyOff,
-  STATERly_ProtectReset
+  STATERly_Ready,
+  STATERly_SeqRlyOn,
+  STATERly_SeqRlyRun,
+  STATERly_SeqRlyOff,
+  STATERly_Protect,
+  STATERly_Manual,
+  STATERly_Reset
 }ProtectRelayState;
 
 struct ProtectRelayState_BIT
