@@ -171,7 +171,12 @@ typedef struct
   union SoCState_REG SoCStateRegs;
 } SocReg;
 
-
+/* ========== API ========== */
+/* 단일 온도 입력 */
+extern float32 GetDischargeLimit30s_A(float32 tempC_f, float32 socPct_f);
+extern float32 GetDischargeLimitCont_A(float32 tempC_f, float32 socPct_f);
+extern float32 GetChargeLimit10s_A(float32 tempC_f, float32 socPct_f);
+extern float32 GetChargeLimitCont_A(float32 tempC_f, float32 socPct_f);
 
 
 

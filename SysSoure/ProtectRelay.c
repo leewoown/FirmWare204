@@ -132,7 +132,6 @@ void ProtectRelayHandle(PrtectRelayReg *P)
              }
         break;
 
-        break;
         default :
         break;
 

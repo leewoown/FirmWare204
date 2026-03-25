@@ -9,6 +9,26 @@
 extern void BatCalcRegsInit(BatCalcReg *P);
 extern void BatCalcVoltHandle(BatCalcReg *P);
 extern void BatCalcTempsHandle(BatCalcReg *P);
+extern float RandVaule(float inputVaule);
+float RandVaule(float inputVaule)
+{
+    static Uint32 seed = 1234567UL;
+    float randNorm;
+    float randOffset;
+
+    /* LCG Random Generator */
+    seed = (Uint32)(1664525UL * seed + 1013904223UL);
+
+    /* 0 ~ 1 */
+    randNorm = (float)(seed & 0xFFFFU) / 65535.0f;
+
+    /* -0.4 ~ +0.5 */
+    randOffset = -0.4f + (randNorm * 0.9f);
+
+    /* 입력 전류 + 랜덤 */
+    return (inputVaule + randOffset);
+}
+
 void BatCalcRegsInit(BatCalcReg *P)
 {
     memset(&P->MDCellMaxVolt[0],0,7);
@@ -74,14 +94,13 @@ void BatCalcRegsInit(BatCalcReg *P)
 void BatCalcVoltHandle(BatCalcReg *P)
 {
     Uint16  Count;
-    Uint16  const MoudleEa =8;
+    Uint16  const MoudleEa =9;
     Uint16  const PackCellEa =22*9;
     /*
      * 정수를 소수점 변환하는 루틴
      */
     for(Count=0; Count<MoudleEa; Count++)
     {
-
         P->MDCellMaxVoltF[Count] =(float32) P->MDCellMaxVolt[Count]  *0.001f;
         P->MDCellMinVoltF[Count] =(float32) P->MDCellMinVolt[Count]  *0.001f;
         P->MDCellAgvVoltF[Count] =(float32) P->MDCellAgvVolt[Count]  *0.001f;
@@ -122,8 +141,8 @@ void BatCalcVoltHandle(BatCalcReg *P)
     P->PackCellMinVoltF  = CellMinVoltF;
     P->PackCellAgvVoltF  = P->PackPTCANF/(float32)PackCellEa;
     P->PackCellDivVoltF  = CellMaxVoltF-CellMinVoltF;
-    P->PackCellMaxVoltPos =  (MDCellMaxVoltPos*24)+P->MDMaxVoltPo[MDCellMinVoltPos-1];
-    P->PackCellMinVoltPos =  (MDCellMinVoltPos*24)+P->MDMinVoltPo[MDCellMinVoltPos-1];
+    P->PackCellMaxVoltPos =  (MDCellMaxVoltPos*22)+P->MDMaxVoltPo[MDCellMinVoltPos-1];
+    P->PackCellMinVoltPos =  (MDCellMinVoltPos*22)+P->MDMinVoltPo[MDCellMinVoltPos-1];
 
 }
 void BatCalcTempsHandle(BatCalcReg *P)

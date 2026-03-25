@@ -22,6 +22,8 @@ extern void CalSysFaultCheck(SystemReg *s);
 extern void CalSysProtectCheck(SystemReg *s);
 
 extern int float32ToInt(float32 Vaule, Uint32 Num);
+extern void TestCurrentlimt_StepUpdate_200ms(SystemReg *p);
+
 //extern SystemReg       SysRegs;
 void CANATX(unsigned int ID, unsigned char Length, unsigned int Data0, unsigned int Data1,unsigned int Data2,unsigned int Data3)
 {
@@ -275,6 +277,7 @@ void SysVarINIT(SystemReg *s)
     s->MD5CANRxCount=0;
     s->MD6CANRxCount=0;
     s->MD7CANRxCount=0;
+    s->MD8CANRxCount=0;
     s->CTRxCount=0;
     s->MasterRxCount=0;
 
@@ -708,6 +711,11 @@ void SysCommErrHandle(SystemReg *P)
         P->MD7CANRxCount=1100;
         P->PackInMDCANrxReg.bit.MD07=1;
     }
+    if(P->MD8CANRxCount>1000)
+    {
+        P->MD8CANRxCount=1100;
+        P->PackInMDCANrxReg.bit.MD08=1;
+    }
 
     if(P->PackModule1Regs.bit.BATIC1ErrFault==1){P->ModuleBatICReg.bit.MD01=1;}
     if(P->PackModule2Regs.bit.BATIC1ErrFault==1){P->ModuleBatICReg.bit.MD02=1;}
@@ -1016,7 +1024,27 @@ void ProtectRelayTimerHandle(TimerReg *timer)
 
   }
 }
+/*
+ *
+ */
+void TestCurrentlimt_StepUpdate_200ms(SystemReg *p)
+{
+    /* SOC 1% 증가 */
+    p->socPct_f += 1.0f;
 
+    if (p->socPct_f > 100.0f)
+    {
+        p->socPct_f = 0.0f;
+
+        /* Temp 1℃ 증가 */
+        p->tempC_f += 1.0f;
+
+        if (p->tempC_f > 60.0f)
+        {
+            p->tempC_f = -30.0f;
+        }
+    }
+}
 
 //extern MODReg MODRegs;
 /*

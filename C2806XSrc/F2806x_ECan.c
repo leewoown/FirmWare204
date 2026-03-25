@@ -776,9 +776,7 @@ void InitECana(void)
            ECanaMboxes.MBOX30.MSGID.bit.STDMSGID = 0x700;
            ECanaMboxes.MBOX30.MSGID.bit.STDMSGID   = (Uint16)((0x700 >> 18) & 0x7FFUL);// = 0x0
            ECanaMboxes.MBOX30.MSGID.bit.EXTMSGID_H = (Uint16)((0x700 >> 16) & 0x3UL);  // = 0x0
-           ECanaMboxes.MBOX30.MSGID.bit.EXTMSGID_L = (Uint16)( 0x700         & 0xFFFFu);// = 0x0700
-
-
+           ECanaMboxes.MBOX30.MSGID.bit.EXTMSGID_L = (Uint16)( 0x700        & 0xFFFFu);// = 0x0700
            ECanaMboxes.MBOX31.MSGID.bit.STDMSGID = 0X300;
            #endif
            #if (PackNum==2)

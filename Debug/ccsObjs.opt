@@ -22,6 +22,7 @@
 "./C2806XSrc/F2806x_usDelay.obj"
 "./SysSoure/BATAlgorithm.obj"
 "./SysSoure/BATCalc.obj"
+"./SysSoure/BATCellModel.obj"
 "./SysSoure/DSP28x_Project.obj"
 "./SysSoure/ProtectRelay.obj"
 "./SysSoure/SpiToCan.obj"

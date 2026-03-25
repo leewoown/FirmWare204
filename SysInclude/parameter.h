@@ -278,7 +278,7 @@ Parameter
 #define     C_PackBalanceDivVoltage            0.01 //10mV
 #define     C_PackBalanceCurrent               5.0
 
-#define     C_CTDirection               1.0
+#define     C_CTDirection               -1.0
 #define     CurrentDirection            1.0
 #define     Cell_Capacity               52
 

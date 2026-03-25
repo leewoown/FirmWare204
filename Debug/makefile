@@ -34,6 +34,7 @@ ORDERED_OBJS += \
 "./C2806XSrc/F2806x_usDelay.obj" \
 "./SysSoure/BATAlgorithm.obj" \
 "./SysSoure/BATCalc.obj" \
+"./SysSoure/BATCellModel.obj" \
 "./SysSoure/DSP28x_Project.obj" \
 "./SysSoure/ProtectRelay.obj" \
 "./SysSoure/SpiToCan.obj" \
@@ -174,8 +175,8 @@ HD198S1Pack_UBMS.out: $(OBJS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)
-	-$(RM) "C2806XSrc\F2806x_Adc.obj" "C2806XSrc\F2806x_CSMPasswords.obj" "C2806XSrc\F2806x_CodeStartBranch.obj" "C2806XSrc\F2806x_CpuTimers.obj" "C2806XSrc\F2806x_DBGIER.obj" "C2806XSrc\F2806x_DefaultIsr.obj" "C2806XSrc\F2806x_Dma.obj" "C2806XSrc\F2806x_ECan.obj" "C2806XSrc\F2806x_EPwm.obj" "C2806XSrc\F2806x_EQep.obj" "C2806XSrc\F2806x_GlobalVariableDefs.obj" "C2806XSrc\F2806x_Gpio.obj" "C2806XSrc\F2806x_I2C.obj" "C2806XSrc\F2806x_Mcbsp.obj" "C2806XSrc\F2806x_MemCopy.obj" "C2806XSrc\F2806x_OscComp.obj" "C2806XSrc\F2806x_PieCtrl.obj" "C2806XSrc\F2806x_PieVect.obj" "C2806XSrc\F2806x_Sci.obj" "C2806XSrc\F2806x_Spi.obj" "C2806XSrc\F2806x_SysCtrl.obj" "C2806XSrc\F2806x_usDelay.obj" "SysSoure\BATAlgorithm.obj" "SysSoure\BATCalc.obj" "SysSoure\DSP28x_Project.obj" "SysSoure\ProtectRelay.obj" "SysSoure\SpiToCan.obj" "SysSoure\main.obj" 
-	-$(RM) "C2806XSrc\F2806x_Adc.d" "C2806XSrc\F2806x_CpuTimers.d" "C2806XSrc\F2806x_DefaultIsr.d" "C2806XSrc\F2806x_Dma.d" "C2806XSrc\F2806x_ECan.d" "C2806XSrc\F2806x_EPwm.d" "C2806XSrc\F2806x_EQep.d" "C2806XSrc\F2806x_GlobalVariableDefs.d" "C2806XSrc\F2806x_Gpio.d" "C2806XSrc\F2806x_I2C.d" "C2806XSrc\F2806x_Mcbsp.d" "C2806XSrc\F2806x_MemCopy.d" "C2806XSrc\F2806x_OscComp.d" "C2806XSrc\F2806x_PieCtrl.d" "C2806XSrc\F2806x_PieVect.d" "C2806XSrc\F2806x_Sci.d" "C2806XSrc\F2806x_Spi.d" "C2806XSrc\F2806x_SysCtrl.d" "SysSoure\BATAlgorithm.d" "SysSoure\BATCalc.d" "SysSoure\DSP28x_Project.d" "SysSoure\ProtectRelay.d" "SysSoure\SpiToCan.d" "SysSoure\main.d" 
+	-$(RM) "C2806XSrc\F2806x_Adc.obj" "C2806XSrc\F2806x_CSMPasswords.obj" "C2806XSrc\F2806x_CodeStartBranch.obj" "C2806XSrc\F2806x_CpuTimers.obj" "C2806XSrc\F2806x_DBGIER.obj" "C2806XSrc\F2806x_DefaultIsr.obj" "C2806XSrc\F2806x_Dma.obj" "C2806XSrc\F2806x_ECan.obj" "C2806XSrc\F2806x_EPwm.obj" "C2806XSrc\F2806x_EQep.obj" "C2806XSrc\F2806x_GlobalVariableDefs.obj" "C2806XSrc\F2806x_Gpio.obj" "C2806XSrc\F2806x_I2C.obj" "C2806XSrc\F2806x_Mcbsp.obj" "C2806XSrc\F2806x_MemCopy.obj" "C2806XSrc\F2806x_OscComp.obj" "C2806XSrc\F2806x_PieCtrl.obj" "C2806XSrc\F2806x_PieVect.obj" "C2806XSrc\F2806x_Sci.obj" "C2806XSrc\F2806x_Spi.obj" "C2806XSrc\F2806x_SysCtrl.obj" "C2806XSrc\F2806x_usDelay.obj" "SysSoure\BATAlgorithm.obj" "SysSoure\BATCalc.obj" "SysSoure\BATCellModel.obj" "SysSoure\DSP28x_Project.obj" "SysSoure\ProtectRelay.obj" "SysSoure\SpiToCan.obj" "SysSoure\main.obj" 
+	-$(RM) "C2806XSrc\F2806x_Adc.d" "C2806XSrc\F2806x_CpuTimers.d" "C2806XSrc\F2806x_DefaultIsr.d" "C2806XSrc\F2806x_Dma.d" "C2806XSrc\F2806x_ECan.d" "C2806XSrc\F2806x_EPwm.d" "C2806XSrc\F2806x_EQep.d" "C2806XSrc\F2806x_GlobalVariableDefs.d" "C2806XSrc\F2806x_Gpio.d" "C2806XSrc\F2806x_I2C.d" "C2806XSrc\F2806x_Mcbsp.d" "C2806XSrc\F2806x_MemCopy.d" "C2806XSrc\F2806x_OscComp.d" "C2806XSrc\F2806x_PieCtrl.d" "C2806XSrc\F2806x_PieVect.d" "C2806XSrc\F2806x_Sci.d" "C2806XSrc\F2806x_Spi.d" "C2806XSrc\F2806x_SysCtrl.d" "SysSoure\BATAlgorithm.d" "SysSoure\BATCalc.d" "SysSoure\BATCellModel.d" "SysSoure\DSP28x_Project.d" "SysSoure\ProtectRelay.d" "SysSoure\SpiToCan.d" "SysSoure\main.d" 
 	-$(RM) "C2806XSrc\F2806x_CSMPasswords.d" "C2806XSrc\F2806x_CodeStartBranch.d" "C2806XSrc\F2806x_DBGIER.d" "C2806XSrc\F2806x_usDelay.d" 
 	-@echo 'Finished clean'
 	-@echo ' '

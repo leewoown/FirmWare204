@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
-
+//#include "BATCellModel.h"
 /*
  *
  */
@@ -46,6 +46,8 @@ void MCP2515SetCNFHandle(char cnf1, char cnf2, char cnf3);
 void MCP2515SetNormalModeHandle(void);
 
 void MCP2515InitHandle(CANBReg *p);
+
+/*BAT MODE*/
 
 
 
@@ -109,7 +111,12 @@ int float32ToInt(float32 Vaule, Uint32 Num);
 /*
  *
  */
-
+float32 GetDischargeLimit30s_A(float32 tempC_f, float32 socPct_f);
+float32 GetDischargeLimitCont_A(float32 tempC_f, float32 socPct_f);
+float32 GetChargeLimit10s_A(float32 tempC_f, float32 socPct_f);
+float32 GetChargeLimitCont_A(float32 tempC_f, float32 socPct_f);
+void TestCurrentlimt_StepUpdate_200ms(SystemReg *p);
+float RandVaule(float inputVaule);
 /*
  *
  */
@@ -224,6 +231,7 @@ void main(void)
                   BatCalcRegsInit(&BatCalcRegs);
                   ProtectRlyVarINIT(&PrtectRelayRegs);
                   CalKokam100AhRegsInit(&Kam100AHSocRegs);
+                 // BatteryModel_UserInit();
                   // Function SysMachine
                   Kam100AHSocRegs.state=SOC_STATE_IDLE;
                   PrtectRelayRegs.StateMachine=STATERly_INIT;
@@ -233,6 +241,7 @@ void main(void)
                   {
                     //SysRegs.SysMachine=System_STATE_PROTECTER;
                   }
+
                 //  SysRegs.PackStateReg.bit.SysSeqState=1;
             break;
             case System_STATE_STANDBY:
@@ -332,6 +341,7 @@ void main(void)
         SysRegs.PackStateReg.bit.PRlyDOStatus=SysRegs.DigitalInputReg.bit.PAUX;
         SysRegs.PackStateReg.bit.PreRlyDOStatus=PrtectRelayRegs.State.bit.PreRlyDO;
 
+
    //     CANBRegs.SPISpeedHz=MeasureSPISpeedHandle(100);
     }
   /*  if(SysRegs.SysMachine==System_STATE_READY)//||(SysRegs.SysMachine==System_STATE_RUNING)||(SysRegs.SysMachine==System_STATE_PROTECTER))
@@ -368,6 +378,7 @@ interrupt void cpu_timer0_isr(void)
     * DigitalInput detection
     */
    DigitalInput(&SysRegs);
+   //BatteryModel_1msTask();
    /*
     *
     */
@@ -472,13 +483,16 @@ interrupt void cpu_timer0_isr(void)
        case 1:
        break;
        case 2:
-
-               memcpy(&BatCalcRegs.MDCellMaxVolt[0], &ModRegs.MDCellMaxVolt[0],sizeof(Uint16)*7);
-               memcpy(&BatCalcRegs.MDCellMinVolt[0], &ModRegs.MDCellMinVolt[0],sizeof(Uint16)*7);
-               memcpy(&BatCalcRegs.MDTotalVolt[0],   &ModRegs.MDTotalVolt[0],sizeof(Uint16)*7);
-               memcpy(&BatCalcRegs.MDMaxVoltPo[0],   &ModRegs.MDMaxVoltPo[0],sizeof(Uint16)*7);
-               memcpy(&BatCalcRegs.MDMinVoltPo[0],   &ModRegs.MDMinVoltPo[0],sizeof(Uint16)*7);
+               /*
+                *
+                */
+               memcpy(&BatCalcRegs.MDCellMaxVolt[0], &ModRegs.MDCellMaxVolt[0],sizeof(Uint16)* 9);
+               memcpy(&BatCalcRegs.MDCellMinVolt[0], &ModRegs.MDCellMinVolt[0],sizeof(Uint16)* 9);
+               memcpy(&BatCalcRegs.MDTotalVolt[0],   &ModRegs.MDTotalVolt[0],  sizeof(Uint16)* 9);
+               memcpy(&BatCalcRegs.MDMaxVoltPo[0],   &ModRegs.MDMaxVoltPo[0],  sizeof(Uint16)* 9);
+               memcpy(&BatCalcRegs.MDMinVoltPo[0],   &ModRegs.MDMinVoltPo[0],  sizeof(Uint16)* 9);
                BatCalcVoltHandle(&BatCalcRegs);
+
                SysRegs.PackVoltageF= BatCalcRegs.PackPTCANF;
                SysRegs.PackCellMaxVoltageF= BatCalcRegs.PackCellMaxVoltF;
                SysRegs.PackCellMinVoltageF= BatCalcRegs.PackCellMinVoltF;
@@ -486,6 +500,30 @@ interrupt void cpu_timer0_isr(void)
                SysRegs.PackCellDivVoltageF= BatCalcRegs.PackCellDivVoltF;
                SysRegs.PackCellMaxVoltPos = BatCalcRegs.PackCellMaxVoltPos;
                SysRegs.PackCellMinVoltPos = BatCalcRegs.PackCellMinVoltPos;
+               /*
+               //SysRegs.PackVoltageF=gTrace_OutV*198.0f;
+               //SysRegs.PackCellMaxVoltageF=gTrace_OutV;
+               if(SysRegs.PackCurrentF>0)
+               {
+    //               SysRegs.PackCellMaxVoltageF=gTrace_OutV+0.05;
+               }
+               else if(SysRegs.PackCurrentF<0)
+               {
+     //              SysRegs.PackCellMaxVoltageF=gTrace_OutV+0.08;
+               }
+     //          SysRegs.PackCellMinVoltageF=gTrace_OutV-0.05;
+               if(SysRegs.PackCurrentF>0)
+               {
+          //         SysRegs.PackCellMinVoltageF=gTrace_OutV-0.03;
+               }
+               else if(SysRegs.PackCurrentF<0)
+               {
+           //        SysRegs.PackCellMinVoltageF=gTrace_OutV-0.09;
+               }*/
+         //      SysRegs.PackCellDivVoltageF = SysRegs.PackCellMaxVoltageF-SysRegs.PackCellMinVoltageF;
+        //       SysRegs.PackCellAgvVoltageF=  SysRegs.PackVoltageF/198.0f;
+        //       SysRegs.PackCellMaxVoltPos = 56;
+        //       SysRegs.PackCellMinVoltPos = 192;
 
        break;
        case 3:
@@ -501,6 +539,10 @@ interrupt void cpu_timer0_isr(void)
 
        break;
        case 5:
+               /*
+                *
+                */
+
                memcpy(&BatCalcRegs.MDCellMaxTemps[0], &ModRegs.MDCellMaxTemps[0],sizeof(Uint32)*7);
                memcpy(&BatCalcRegs.MDCellMinTemps[0], &ModRegs.MDCellMinTemps[0],sizeof(Uint32)*7);
                memcpy(&BatCalcRegs.MDMaxTempsPo[0],   &ModRegs.MDMaxTempsPo[0],sizeof(Uint32)*7);
@@ -513,9 +555,22 @@ interrupt void cpu_timer0_isr(void)
                SysRegs.PackCellMaxTmepsPos    = BatCalcRegs.PackCellMaxTempsPos;
                SysRegs.PackCellMinTmepsPos    = BatCalcRegs.PackCellMinTempsPos;
 
+              // SysRegs.PackCellMaxTemperatureF= RandVaule(gTrace_CellTempC+1.5);
+               //SysRegs.PackCellMinTemperatureF= RandVaule(gTrace_CellTempC-0.5);
+
+             //  SysRegs.PackCellDivTemperatureF= SysRegs.PackCellMaxTemperatureF-SysRegs.PackCellMinTemperatureF;
+             //  SysRegs.PackCellAgvTemperatureF= RandVaule(gTrace_CellTempC);
+             //  SysRegs.PackCellMaxTmepsPos    = RandVaule(74);
+             //  SysRegs.PackCellMinTmepsPos    = RandVaule(10);
        break;
        case 10:
-
+               if(SysRegs.PackStateReg.bit.INITOK==1)
+               {
+                   SysRegs.PackDisCHAPWRPeakF       = GetDischargeLimit30s_A(SysRegs.PackCellAgvTemperatureF, SysRegs.PackSOCF);
+                   SysRegs.PackDisCHAPWRContintyF   = GetDischargeLimitCont_A(SysRegs.PackCellAgvTemperatureF, SysRegs.PackSOCF);
+                   SysRegs.PackCHAPWRPeakF          = GetChargeLimit10s_A(SysRegs.PackCellAgvTemperatureF, SysRegs.PackSOCF);
+                   SysRegs.PackCHAPWRContintyF      = GetChargeLimitCont_A(SysRegs.PackCellAgvTemperatureF, SysRegs.PackSOCF);
+               }
 
        break;
        case 20:
@@ -537,6 +592,8 @@ interrupt void cpu_timer0_isr(void)
                    if(SysRegs.PackStateReg.bit.CANCOMEnable==1)
                    {
                        SysRegs.PackSOHF = 100.0;
+                       //SysRegs.PackCurrentF=RandVaule(gBattery_OutputCurrentA);
+                      // SysRegs.PackSOCF = gTrace_SOC;
                        CANARegs.PackPT = (unsigned int)(SysRegs.PackVoltageF*10);
                        CANARegs.PackCT = (int)(SysRegs.PackCurrentF*10.0);
                        CANARegs.PackSOC =(unsigned int)(SysRegs.PackSOCF*10);
@@ -606,10 +663,10 @@ interrupt void cpu_timer0_isr(void)
                #if(PackNum==1)
                    if(SysRegs.PackStateReg.bit.CANCOMEnable==1)
                    {
-                     SysRegs.PackCHAPWRContintyF    =  43.0;
-                     SysRegs.PackDisCHAPWRContintyF =  92.7;
-                     SysRegs.PackCHAPWRPeakF        =  60.0;
-                     SysRegs.PackDisCHAPWRPeakF     =  150,0;
+                     //SysRegs.PackCHAPWRContintyF    =  43.0;
+                     //SysRegs.PackDisCHAPWRContintyF =  92.7;
+                     //SysRegs.PackCHAPWRPeakF        =  60.0;
+                     //SysRegs.PackDisCHAPWRPeakF     =  150,0;
                      CANARegs.PackCHAPWRContinty    = (unsigned int)(SysRegs.PackCHAPWRContintyF*10);
                      CANARegs.PackDisCHAPWRContinty = (unsigned int)(SysRegs.PackDisCHAPWRContintyF*10);
                      CANARegs.PackCHAPWRPeak        = (unsigned int)(SysRegs.PackCHAPWRPeakF*10);
@@ -638,9 +695,10 @@ interrupt void cpu_timer0_isr(void)
                 #if(PackNum==1)
                 if(SysRegs.PackStateReg.bit.CANCOMEnable==1)
                 {
+                    SysRegs.PackCellAgvTemperatureF= SysRegs.tempC_f;
                     CANARegs.PackTemperaturelMAX    = (unsigned int)(SysRegs.PackCellMaxTemperatureF*10);
                     CANARegs.PackTemperaturelMIN    = (unsigned int)(SysRegs.PackCellMinTemperatureF*10);
-                    CANARegs.PackTemperatureAVG     = (unsigned int)(SysRegs.PackCellAgvTemperatureF*10);
+                    CANARegs.PackTemperatureAVG     = (int)(SysRegs.PackCellAgvTemperatureF*10);
                     CANARegs.PackTemperatureDiv     = (unsigned int)(SysRegs.PackCellDivTemperatureF*10);
                     CANARegs.PackID =0X606;
                     CANATX_29bit(CANARegs.PackID,8,CANARegs.PackTemperaturelMAX,CANARegs.PackTemperaturelMIN,CANARegs.PackTemperatureAVG,CANARegs.PackTemperatureDiv);
@@ -842,6 +900,11 @@ interrupt void cpu_timer0_isr(void)
                CANARegs.DebugStaueE.all = CANARegs.PMSCMDRegs.all;
                CANATX_29bit(CANARegs.PackID,8,CANARegs.DebugStaueE.all,CANARegs.DebugStaueF.all,CANARegs.DebugStaueG.all ,CANARegs.DebugStaueH.all);
        break;
+       case 80:
+
+               TestCurrentlimt_StepUpdate_200ms(&SysRegs);
+
+       break;
        default :
        break;
    }
@@ -978,7 +1041,7 @@ interrupt void ISR_CANRXINTA(void)
         if(ECanaRegs.CANRMP.bit.RMP1==1) //0XR2~4 , R1~4)
         {
             ModRegs.MailBox2Rxcount[0]++;
-       //     SysRegs.MailBox1Rxcount=0;
+            SysRegs.MD2CANRxCount=0;
             switch(ECanaMboxes.MBOX1.MSGID.bit.STDMSGID)
             {
              #if(PackNum==1)
@@ -1032,7 +1095,7 @@ interrupt void ISR_CANRXINTA(void)
         if(ECanaRegs.CANRMP.bit.RMP2==1) //0XR31~4 , R1~4)
         {
             ModRegs.MailBox3Rxcount[0]++;
-         //   SysRegs.MailBox2Rxcount=0;
+            SysRegs.MD3CANRxCount=0;
             switch(ECanaMboxes.MBOX2.MSGID.bit.STDMSGID)
             {
                 #if(PackNum==1)
@@ -1340,7 +1403,7 @@ interrupt void ISR_CANRXINTA(void)
         if(ECanaRegs.CANRMP.bit.RMP8==1)
         {
             ModRegs.MailBox9Rxcount[0]++;
-            SysRegs.MD7CANRxCount=0;
+            SysRegs.MD8CANRxCount=0;
             switch(ECanaMboxes.MBOX8.MSGID.bit.STDMSGID)
             {
                 #if(PackNum==1)
@@ -1396,7 +1459,6 @@ interrupt void ISR_CANRXINTA(void)
                 if(CANARegs.MailBox1RxCount>3000){CANARegs.MailBox1RxCount=0;}
                 SysRegs.CurrentData.byte.CurrentH   = (ECanaMboxes.MBOX29.MDL.byte.BYTE0<<8)|(ECanaMboxes.MBOX29.MDL.byte.BYTE1);
                 SysRegs.CurrentData.byte.CurrentL   = (ECanaMboxes.MBOX29.MDL.byte.BYTE2<<8)|(ECanaMboxes.MBOX29.MDL.byte.BYTE3);
-
             }
             #endif
 
@@ -1436,8 +1498,6 @@ interrupt void ISR_CANRXINTA(void)
     ECanaRegs.CANGIF0.all = ECanaRegs.CANGIF0.all;
     ECanaRegs.CANGIF1.all = ECanaRegs.CANGIF1.all;
     PieCtrlRegs.PIEACK.all = PIEACK_GROUP9;
-    ///IER |= 0x0100;                  // Enable INT9
-    //EINT;
 
 }//EOF
 /*

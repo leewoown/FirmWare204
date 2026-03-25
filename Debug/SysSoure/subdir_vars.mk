@@ -8,6 +8,7 @@ SHELL = cmd.exe
 C_SRCS += \
 ../SysSoure/BATAlgorithm.c \
 ../SysSoure/BATCalc.c \
+../SysSoure/BATCellModel.c \
 ../SysSoure/DSP28x_Project.c \
 ../SysSoure/ProtectRelay.c \
 ../SysSoure/SpiToCan.c \
@@ -16,6 +17,7 @@ C_SRCS += \
 C_DEPS += \
 ./SysSoure/BATAlgorithm.d \
 ./SysSoure/BATCalc.d \
+./SysSoure/BATCellModel.d \
 ./SysSoure/DSP28x_Project.d \
 ./SysSoure/ProtectRelay.d \
 ./SysSoure/SpiToCan.d \
@@ -24,6 +26,7 @@ C_DEPS += \
 OBJS += \
 ./SysSoure/BATAlgorithm.obj \
 ./SysSoure/BATCalc.obj \
+./SysSoure/BATCellModel.obj \
 ./SysSoure/DSP28x_Project.obj \
 ./SysSoure/ProtectRelay.obj \
 ./SysSoure/SpiToCan.obj \
@@ -32,6 +35,7 @@ OBJS += \
 OBJS__QUOTED += \
 "SysSoure\BATAlgorithm.obj" \
 "SysSoure\BATCalc.obj" \
+"SysSoure\BATCellModel.obj" \
 "SysSoure\DSP28x_Project.obj" \
 "SysSoure\ProtectRelay.obj" \
 "SysSoure\SpiToCan.obj" \
@@ -40,6 +44,7 @@ OBJS__QUOTED += \
 C_DEPS__QUOTED += \
 "SysSoure\BATAlgorithm.d" \
 "SysSoure\BATCalc.d" \
+"SysSoure\BATCellModel.d" \
 "SysSoure\DSP28x_Project.d" \
 "SysSoure\ProtectRelay.d" \
 "SysSoure\SpiToCan.d" \
@@ -48,6 +53,7 @@ C_DEPS__QUOTED += \
 C_SRCS__QUOTED += \
 "../SysSoure/BATAlgorithm.c" \
 "../SysSoure/BATCalc.c" \
+"../SysSoure/BATCellModel.c" \
 "../SysSoure/DSP28x_Project.c" \
 "../SysSoure/ProtectRelay.c" \
 "../SysSoure/SpiToCan.c" \
